@@ -51,6 +51,10 @@ public class MaManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F4)){
             Config_F4();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            Application.Quit();
+        }
     }
 
     void Config_F1(){

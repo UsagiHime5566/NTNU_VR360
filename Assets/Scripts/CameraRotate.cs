@@ -10,19 +10,36 @@ public class CameraRotate : MonoBehaviour
 
     void Start()
     {
-        tweener = transform.DORotate(new Vector3(0, 360, 0), rotateSpeed, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
+        //tweener = transform.DORotate(new Vector3(0, 360, 0), rotateSpeed, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Delete)){
-            if(tweener == null){
-                tweener = transform.DORotate(new Vector3(0, 360, 0), rotateSpeed, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
-            } else {
-                tweener.Kill();
-                tweener = null;
-            }
+        // if(Input.GetKeyDown(KeyCode.Delete)){
+        //     if(tweener == null){
+        //         tweener = transform.DORotate(new Vector3(0, 360, 0), rotateSpeed, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
+        //     } else {
+        //         tweener.Kill();
+        //         tweener = null;
+        //         transform.localEulerAngles = new Vector3(0, 0, 0);
+        //     }
+        // }
+    }
+
+    public bool isRunning(){
+        return tweener != null;
+    }
+
+    public void StartRotate(){
+        if(tweener == null){
+            tweener = transform.DORotate(new Vector3(0, 360, 0), rotateSpeed, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
         }
+    }
+    public void ResetRotate(){
+        if(tweener != null){
+            tweener.Kill();
+            tweener = null;
+        }
+        transform.localEulerAngles = new Vector3(0, 0, 0);
     }
 }

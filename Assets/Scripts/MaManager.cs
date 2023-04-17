@@ -12,6 +12,8 @@ public class MaManager : MonoBehaviour
     public List<OscJack.OscConnection> oscSetting;
     public List<OscJack.OscPropertySender> oscSender;
 
+    public RawImage GroundTarget;
+
     [Header("Component")]
     public CameraRotate cameraRotate;
     void Start()
@@ -76,6 +78,16 @@ public class MaManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape)){
             Application.Quit();
+        }
+
+        if(Input.GetKeyDown(KeyCode.L)){
+            var orect = GroundTarget.uvRect;
+            GroundTarget.uvRect = new Rect(0, 0, orect.width + 0.01f, 1);
+        }
+
+        if(Input.GetKeyDown(KeyCode.K)){
+            var orect = GroundTarget.uvRect;
+            GroundTarget.uvRect = new Rect(0, 0, orect.width - 0.01f, 1);
         }
 
         if(Input.GetKeyDown(KeyCode.Delete)){

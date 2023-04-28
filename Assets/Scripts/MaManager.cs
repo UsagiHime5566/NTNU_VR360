@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using OscJack;
+using UnityEngine.Video;
 
 public class MaManager : MonoBehaviour
 {
@@ -12,7 +13,13 @@ public class MaManager : MonoBehaviour
     public List<OscJack.OscConnection> oscSetting;
     public List<OscJack.OscPropertySender> oscSender;
 
+    public Button BTN_Inline;
+    public Button BTN_Square;
+    public List<GameObject> ModeInLine;
+    public List<GameObject> ModeSquare;
+
     public RawImage GroundTarget;
+    public VideoPlayer videoPlayer;
 
     [Header("Component")]
     public CameraRotate cameraRotate;
@@ -49,6 +56,14 @@ public class MaManager : MonoBehaviour
 
         oscSender[0].gameObject.SetActive(true);
         oscSender[1].gameObject.SetActive(true);
+
+        BTN_Inline.onClick.AddListener(BeModeInLine);
+
+        BTN_Square.onClick.AddListener(BeModeSquare);
+
+        if(SystemConfig.Instance.GetData<string>("Mode","") == "InLine"){
+            BeModeInLine();
+        }
     }
 
     void Update()
@@ -74,6 +89,13 @@ public class MaManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.V)){
             Config_F4();
+        }
+
+        if(Input.GetKeyDown(KeyCode.A)){
+            BeModeInLine();
+        }
+        if(Input.GetKeyDown(KeyCode.S)){
+            BeModeSquare();
         }
 
         if(Input.GetKeyDown(KeyCode.Escape)){
@@ -102,6 +124,37 @@ public class MaManager : MonoBehaviour
                 oscSender[1].Send("start");
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.P)){
+            videoPlayer.Stop();
+            videoPlayer.Play();
+            oscSender[0].Send("play");
+            oscSender[1].Send("play");
+        }
+    }
+
+    void BeModeInLine(){
+        foreach (var item in ModeInLine)
+        {
+            item.SetActive(true);
+        }
+        foreach (var item in ModeSquare)
+        {
+            item.SetActive(false);
+        }
+        SystemConfig.Instance.SaveData("Mode","InLine");
+    }
+
+    void BeModeSquare(){
+        foreach (var item in ModeInLine)
+        {
+            item.SetActive(false);
+        }
+        foreach (var item in ModeSquare)
+        {
+            item.SetActive(true);
+        }
+        SystemConfig.Instance.SaveData("Mode","Square");
     }
 
     void Config_F1(){
@@ -135,6 +188,10 @@ public class MaManager : MonoBehaviour
         }
         if(cmd == "reset"){
             cameraRotate.ResetRotate();
+        }
+        if(cmd == "play"){
+            videoPlayer.Stop();
+            videoPlayer.Play();
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SystemManager : HimeLib.SingletonMono<SystemManager>
 {
@@ -94,6 +95,17 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
             oscSender[0].Send("stop");
             oscSender[1].Send("stop");
         }
+        if(Input.GetKeyDown(KeyCode.U)){
+            SceneManager.LoadScene("Scene Calibration");
+            oscSender[0].Send("s0");
+            oscSender[1].Send("s0");
+        }
+
+        if(Input.GetKeyDown(KeyCode.I)){
+            SceneManager.LoadScene("Scene0715");
+            oscSender[0].Send("s1");
+            oscSender[1].Send("s1");
+        }
     }
 
     void Config_F1(){
@@ -127,6 +139,12 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
         }
         if(cmd == "stop"){
             OnSynchroStop?.Invoke();
+        }
+        if(cmd == "s0"){
+            SceneManager.LoadScene("Scene Calibration");
+        }
+        if(cmd == "s1"){
+            SceneManager.LoadScene("Scene0715");
         }
     }
 }

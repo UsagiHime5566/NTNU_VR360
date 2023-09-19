@@ -9,13 +9,5 @@ public class Entrance : HimeLib.SingletonMono<Entrance>
     void Start()
     {
         MarkAsCrossSceneSingleton();
-
-        
-    }
-
-    void Update()
-    {
-        
-        
     }
 }

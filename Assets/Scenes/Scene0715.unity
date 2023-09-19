@@ -204,8 +204,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89544919}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.0008105232, y: 0.98844165, z: 0.11392957, w: 0.10001327}
+  m_LocalPosition: {x: -4.617585, y: 1.0255272, z: 4.2947407}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -227,8 +227,8 @@ MonoBehaviour:
   mainDirector: {fileID: 1799945817}
   bgm: {fileID: 1480624222}
   objToFind: 360ViewPosition
-  viewPos: {x: -3.4414997, y: 0.9129766, z: 2.8219938}
-  viewRotate: {x: -16.809, y: 166.901, z: -0.01}
+  viewPos: {x: -4.617585, y: 1.025527, z: 4.294741}
+  viewRotate: {x: -13.026, y: 168.302, z: 1.246}
 --- !u!1001 &339470989
 PrefabInstance:
   m_ObjectHideFlags: 0

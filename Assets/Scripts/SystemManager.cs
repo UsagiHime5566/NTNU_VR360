@@ -97,14 +97,22 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
         }
         if(Input.GetKeyDown(KeyCode.U)){
             SceneManager.LoadScene("Scene Calibration");
-            oscSender[0].Send("s0");
-            oscSender[1].Send("s0");
+            SynchoCmd("act0");
         }
 
         if(Input.GetKeyDown(KeyCode.I)){
-            SceneManager.LoadScene("Scene0715");
-            oscSender[0].Send("s1");
-            oscSender[1].Send("s1");
+            StageController.instance.GoStageSyncho("Act1");
+            SynchoCmd("Act1");
+        }
+
+        if(Input.GetKeyDown(KeyCode.O)){
+            StageController.instance.GoStageSyncho("Act2");
+            SynchoCmd("Act2");
+        }
+
+        if(Input.GetKeyDown(KeyCode.P)){
+            StageController.instance.GoStageSyncho("Act3");
+            SynchoCmd("Act3");
         }
     }
 
@@ -140,11 +148,31 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
         if(cmd == "stop"){
             OnSynchroStop?.Invoke();
         }
-        if(cmd == "s0"){
+        if(cmd == "act0"){
             SceneManager.LoadScene("Scene Calibration");
         }
-        if(cmd == "s1"){
-            SceneManager.LoadScene("Scene0715");
+        if(cmd == "Act1"){
+            StageController.instance.GoStageSyncho("Act1");
         }
+        if(cmd == "Act2"){
+            StageController.instance.GoStageSyncho("Act2");
+        }
+        if(cmd == "Act3"){
+            StageController.instance.GoStageSyncho("Act3");
+        }
+
+    }
+
+    public void InvokeSynchoPlay(){
+        OnSynchroPlay?.Invoke();
+    }
+
+    public void InvokeSynchoStop(){
+        OnSynchroStop?.Invoke();
+    }
+
+    public void SynchoCmd(string cmd){
+        oscSender[0].Send(cmd);
+        oscSender[1].Send(cmd);
     }
 }

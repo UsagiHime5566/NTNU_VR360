@@ -318,7 +318,7 @@ namespace BayatGames.SaveGameFree
                         filePath = string.Format("{0}/{1}", Application.persistentDataPath, identifier);
                         break;
                     case SaveGamePath.DataPath:
-                        filePath = string.Format("{0}/{1}", Application.dataPath, identifier);
+                        filePath = string.Format("{0}/../{1}", Application.dataPath, identifier);
                         break;
                 }
             }
@@ -607,7 +607,7 @@ namespace BayatGames.SaveGameFree
                         filePath = string.Format("{0}/{1}", Application.persistentDataPath, identifier);
                         break;
                     case SaveGamePath.DataPath:
-                        filePath = string.Format("{0}/{1}", Application.dataPath, identifier);
+                        filePath = string.Format("{0}/../{1}", Application.dataPath, identifier);
                         break;
                 }
             }
@@ -739,7 +739,7 @@ namespace BayatGames.SaveGameFree
                         filePath = string.Format("{0}/{1}", Application.persistentDataPath, identifier);
                         break;
                     case SaveGamePath.DataPath:
-                        filePath = string.Format("{0}/{1}", Application.dataPath, identifier);
+                        filePath = string.Format("{0}/../{1}", Application.dataPath, identifier);
                         break;
                 }
             }
@@ -805,7 +805,7 @@ namespace BayatGames.SaveGameFree
                         filePath = string.Format("{0}/{1}", Application.persistentDataPath, identifier);
                         break;
                     case SaveGamePath.DataPath:
-                        filePath = string.Format("{0}/{1}", Application.dataPath, identifier);
+                        filePath = string.Format("{0}/../{1}", Application.dataPath, identifier);
                         break;
                 }
             }
@@ -947,7 +947,7 @@ namespace BayatGames.SaveGameFree
                         filePath = string.Format("{0}/{1}", Application.persistentDataPath, identifier);
                         break;
                     case SaveGamePath.DataPath:
-                        filePath = string.Format("{0}/{1}", Application.dataPath, identifier);
+                        filePath = string.Format("{0}/../{1}", Application.dataPath, identifier);
                         break;
                 }
             }
@@ -1009,7 +1009,7 @@ namespace BayatGames.SaveGameFree
                         filePath = string.Format("{0}/{1}", Application.persistentDataPath, identifier);
                         break;
                     case SaveGamePath.DataPath:
-                        filePath = string.Format("{0}/{1}", Application.dataPath, identifier);
+                        filePath = string.Format("{0}/../{1}", Application.dataPath, identifier);
                         break;
                 }
             }

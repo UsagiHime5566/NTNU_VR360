@@ -1493,8 +1493,8 @@ MonoBehaviour:
   mainDirector: {fileID: 1480624224}
   bgm: {fileID: 1480624222}
   objToFind: 360ViewPosition
-  viewPos: {x: -4.617585, y: 1.025527, z: 4.294741}
-  viewRotate: {x: -13.026, y: 168.302, z: 1.246}
+  viewPos: {x: -3, y: 0.25, z: 2.75}
+  viewRotate: {x: -10, y: 180, z: 0}
   prepareTime: 1
 --- !u!4 &1103826184
 Transform:

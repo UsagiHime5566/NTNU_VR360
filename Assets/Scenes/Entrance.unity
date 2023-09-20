@@ -178,9 +178,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfbf2edf46ba194fa1275329563403d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  originCameraMALeft: {fileID: 0}
+  originCameraMA: {fileID: 0}
+  MAImg: {fileID: 0}
+  originCameraMARight: {fileID: 0}
+  MATwImg: []
   ground: {fileID: 575819433}
-  groundFront: {fileID: 2142828907}
   groundCamera: {fileID: 776471875}
+  originCameraBK: {fileID: 0}
+  BKPos: {fileID: 0}
 --- !u!1 &87475839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1361,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.7
+    width: 0.77
     height: 1
 --- !u!222 &575819435
 CanvasRenderer:
@@ -1420,14 +1426,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776471873}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 831245569}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!20 &776471875
 Camera:
   m_ObjectHideFlags: 0

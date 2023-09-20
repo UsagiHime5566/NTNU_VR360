@@ -1252,8 +1252,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.01
+  far clip plane: 10
   field of view: 35
   orthographic: 0
   orthographic size: 5
@@ -1439,7 +1439,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.7
+    width: 0.77
     height: 1
 --- !u!222 &575819435
 CanvasRenderer:
@@ -1631,8 +1631,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.01
+  far clip plane: 10
   field of view: 156
   orthographic: 0
   orthographic size: 5
@@ -1934,8 +1934,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.01
+  far clip plane: 10
   field of view: 35
   orthographic: 0
   orthographic size: 5
@@ -2409,8 +2409,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.01
+  far clip plane: 10
   field of view: 90
   orthographic: 0
   orthographic size: 5
@@ -4107,8 +4107,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.01
+  far clip plane: 10
   field of view: 90
   orthographic: 0
   orthographic size: 5

@@ -14,8 +14,12 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
     public System.Action OnSynchroPlay;
     public System.Action OnSynchroStop;
 
+    public System.Action<int> OnSwitchScreen;
+
     [Header("暫定以KL鍵調整")]
     public RawImage GroundEdgeAdjust;
+
+    public int currentDisplay;
 
     void Start()
     {
@@ -121,24 +125,32 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
         Proj_Cameras[1].targetDisplay = 2;
         Proj_Cameras[2].targetDisplay = 3;
         SystemConfig.Instance.SaveData("Display", 0);
+        currentDisplay = 0;
+        OnSwitchScreen?.Invoke(0);
     }
     void Config_F2(){
         Proj_Cameras[0].targetDisplay = 0;
         Proj_Cameras[1].targetDisplay = 2;
         Proj_Cameras[2].targetDisplay = 3;
         SystemConfig.Instance.SaveData("Display", 1);
+        currentDisplay = 1;
+        OnSwitchScreen?.Invoke(1);
     }
     void Config_F3(){
         Proj_Cameras[0].targetDisplay = 1;
         Proj_Cameras[1].targetDisplay = 0;
         Proj_Cameras[2].targetDisplay = 3;
         SystemConfig.Instance.SaveData("Display", 2);
+        currentDisplay = 2;
+        OnSwitchScreen?.Invoke(2);
     }
     void Config_F4(){
         Proj_Cameras[0].targetDisplay = 1;
         Proj_Cameras[1].targetDisplay = 2;
         Proj_Cameras[2].targetDisplay = 0;
         SystemConfig.Instance.SaveData("Display", 3);
+        currentDisplay = 3;
+        OnSwitchScreen?.Invoke(3);
     }
 
     public void OSC_RecieveMsgCallback(string cmd){

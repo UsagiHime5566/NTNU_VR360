@@ -12,16 +12,22 @@ public class MovieSyncho : MonoBehaviour
         SystemManager.instance.OnSynchroPlay += AddPlayCallback;
 
         SystemManager.instance.OnSynchroStop += AddStopCallback;
+        
+        SystemManager.instance.OnSwitchScreen += AddSwitchScreen;
     }
     private void OnDisable() {
         SystemManager.instance.OnSynchroPlay -= AddPlayCallback;
 
         SystemManager.instance.OnSynchroStop -= AddStopCallback;
+
+        SystemManager.instance.OnSwitchScreen -= AddSwitchScreen;
     }
     void AddPlayCallback(){
-        foreach (var item in vp)
+        for (int i = 0; i < vp.Count; i++)
         {
-            item.Play();
+            if(i == SystemManager.instance.currentDisplay - 1){
+                vp[i].Play();
+            }
         }
     }
     void AddStopCallback(){
@@ -29,6 +35,32 @@ public class MovieSyncho : MonoBehaviour
         {
             item.Stop();
             item.time = 0;
+        }
+    }
+    void AddSwitchScreen(int display)
+    {
+        switch (display)
+        {
+            case 0:
+                vp[0].Stop();
+                vp[1].Stop();
+                vp[2].Stop();
+                break;
+            case 1:
+                //vp[0].Stop();
+                vp[1].Stop();
+                vp[2].Stop();
+                break;
+            case 2:
+                vp[0].Stop();
+                //vp[1].Stop();
+                vp[2].Stop();
+                break;
+            case 3:
+                vp[0].Stop();
+                vp[1].Stop();
+                //vp[2].Stop();
+                break;
         }
     }
     IEnumerator Start()

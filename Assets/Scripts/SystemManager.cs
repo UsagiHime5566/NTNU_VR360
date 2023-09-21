@@ -172,7 +172,21 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
         if(cmd == "Act3"){
             StageController.instance.GoStageSyncho("Act3");
         }
-
+        if(cmd.Contains("v360:")){
+            try {
+                var vals = cmd.Split(":")[1];
+                var val = vals.Split(",");
+                float x, y, z, rx, ry, rz;
+                float.TryParse(val[0], out x);
+                float.TryParse(val[1], out y);
+                float.TryParse(val[2], out z);
+                float.TryParse(val[3], out rx);
+                float.TryParse(val[4], out ry);
+                float.TryParse(val[5], out rz);
+                ControlV360Cam.instance.UpdateView(new Vector3(x, y, z), new Vector3(rx, ry, rz));
+                ControlV360Cam.instance.SaveView();
+            } catch {}
+        }
     }
 
     public void InvokeSynchoPlay(){

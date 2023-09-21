@@ -47,19 +47,19 @@ public class MovieSyncho : MonoBehaviour
                 vp[2].Stop();
                 break;
             case 1:
-                //vp[0].Stop();
+                vp[0].Play();
                 vp[1].Stop();
                 vp[2].Stop();
                 break;
             case 2:
                 vp[0].Stop();
-                //vp[1].Stop();
+                vp[1].Play();
                 vp[2].Stop();
                 break;
             case 3:
                 vp[0].Stop();
                 vp[1].Stop();
-                //vp[2].Stop();
+                vp[2].Play();
                 break;
         }
     }

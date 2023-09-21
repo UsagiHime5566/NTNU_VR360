@@ -256,6 +256,7 @@ MonoBehaviour:
   - {fileID: 1653338975}
   - {fileID: 1796022406}
   GroundEdgeAdjust: {fileID: 575819434}
+  currentDisplay: 0
 --- !u!114 &87475842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2027,9 +2028,9 @@ MonoBehaviour:
   Scene_3: Act3
   stage_names: []
   stage_times:
-  - 116
-  - 86
-  - 146
+  - 119
+  - 119
+  - 149
   openList: []
   isServer: 0
   TG_IsServer: {fileID: 1198442392}

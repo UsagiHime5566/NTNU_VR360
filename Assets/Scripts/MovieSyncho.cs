@@ -65,6 +65,14 @@ public class MovieSyncho : MonoBehaviour
     }
     IEnumerator Start()
     {
+        for (int i = 0; i < vp.Count; i++)
+        {
+            if(i == SystemManager.instance.currentDisplay - 1){
+                vp[i].Prepare();
+            }
+        }
+
+
         yield return new WaitForSeconds(prepareTime);
 
         SystemManager.instance.InvokeSynchoPlay();

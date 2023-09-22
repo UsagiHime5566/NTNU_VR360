@@ -100,7 +100,9 @@ public class StageController : HimeLib.SingletonMono<StageController>
 
     IEnumerator InfinityLoopPlay(){
         while(true){
-            StartStagePlay();
+            if(PresantationMode == false){
+                StartStagePlay();
+            }
             yield return new WaitForSeconds(1);
         }
     }
@@ -125,6 +127,10 @@ public class StageController : HimeLib.SingletonMono<StageController>
         for (int i = 0; i < stage_names.Count; i++)
         {
             SceneIndex = i;
+
+            if(PresantationMode == true)
+                break;
+
             GoStage(stage_names[SceneIndex]);
             SystemManager.instance.SynchoCmd(stage_names[SceneIndex]);
             

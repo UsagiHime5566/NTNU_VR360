@@ -103,21 +103,31 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
         if(Input.GetKeyDown(KeyCode.U)){
             SceneManager.LoadScene("Scene Calibration");
             SynchoCmd("act0");
+            StageController.instance.PresantationMode = true;
         }
 
         if(Input.GetKeyDown(KeyCode.I)){
             StageController.instance.GoStageSyncho("Act1");
             SynchoCmd("Act1");
+            StageController.instance.PresantationMode = true;
         }
 
         if(Input.GetKeyDown(KeyCode.O)){
             StageController.instance.GoStageSyncho("Act2");
             SynchoCmd("Act2");
+            StageController.instance.PresantationMode = true;
         }
 
         if(Input.GetKeyDown(KeyCode.P)){
             StageController.instance.GoStageSyncho("Act3");
             SynchoCmd("Act3");
+            StageController.instance.PresantationMode = true;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Return)){
+            SceneManager.LoadScene("Scene Calibration");
+            SynchoCmd("act0");
+            StageController.instance.PresantationMode = false;
         }
     }
 

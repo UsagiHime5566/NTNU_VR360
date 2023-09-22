@@ -5,12 +5,14 @@ using UnityEngine;
 public class ObjectEnableControl : HimeLib.SingletonMono<ObjectEnableControl>
 {
     public List<GameObject> ControlsObject;
+    public GameObject MovieCanvas;
 
     public void ToMovieMode(){
         foreach (var item in ControlsObject)
         {
             item.SetActive(false);
         }
+        MovieCanvas.SetActive(true);
     }
     
     public void To3DMode(){
@@ -18,5 +20,6 @@ public class ObjectEnableControl : HimeLib.SingletonMono<ObjectEnableControl>
         {
             item.SetActive(true);
         }
+        MovieCanvas.SetActive(false);
     }
 }

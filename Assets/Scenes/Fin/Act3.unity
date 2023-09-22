@@ -190,7 +190,7 @@ MonoBehaviour:
   - {fileID: 931102673}
   - {fileID: 1582845762}
   - {fileID: 2079218152}
-  prepareTime: 1
+  prepareTime: 3.5
 --- !u!1 &931102671
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
@@ -456,7 +456,7 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:

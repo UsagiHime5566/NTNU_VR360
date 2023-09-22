@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 80663abae87411f439c8e11291424335
   - enabled: 1
     path: Assets/Scenes/Fin/Act2.unity
-    guid: abe4bb4a85f13a24eb5174a3b5c91162
+    guid: f92bf00c0f4f2754c93a45663bbda4bf
   - enabled: 1
     path: Assets/Scenes/Fin/Act3.unity
     guid: a641ad2c5d0f8a6479e1be6ef10ea07f

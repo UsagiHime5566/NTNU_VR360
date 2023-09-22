@@ -255,6 +255,7 @@ MonoBehaviour:
   oscSender:
   - {fileID: 1653338975}
   - {fileID: 1796022406}
+  mainListener: {fileID: 1315166433}
   GroundEdgeAdjust: {fileID: 575819434}
   currentDisplay: 0
 --- !u!114 &87475842
@@ -1254,7 +1255,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 10
+  far clip plane: 1000
   field of view: 35
   orthographic: 0
   orthographic size: 5
@@ -1936,7 +1937,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 10
+  far clip plane: 1000
   field of view: 35
   orthographic: 0
   orthographic size: 5
@@ -2411,7 +2412,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 10
+  far clip plane: 1000
   field of view: 90
   orthographic: 0
   orthographic size: 5
@@ -2584,6 +2585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19cbc0a6d1edea44ba3d5c73a2ced0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posAmp: 0.1
+  rotAmp: 1
 --- !u!1 &1472445979
 GameObject:
   m_ObjectHideFlags: 0
@@ -4109,7 +4112,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 10
+  far clip plane: 1000
   field of view: 90
   orthographic: 0
   orthographic size: 5

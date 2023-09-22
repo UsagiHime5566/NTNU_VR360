@@ -10,6 +10,7 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
     public List<Camera> Proj_Cameras;
     public List<OscJack.OscConnection> oscSetting;
     public List<OscJack.OscPropertySender> oscSender;
+    public AudioListener mainListener;
 
     public System.Action OnSynchroPlay;
     public System.Action OnSynchroStop;
@@ -127,6 +128,7 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
         SystemConfig.Instance.SaveData("Display", 0);
         currentDisplay = 0;
         OnSwitchScreen?.Invoke(0);
+        mainListener.enabled = true;
     }
     void Config_F2(){
         Proj_Cameras[0].targetDisplay = 0;
@@ -135,6 +137,7 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
         SystemConfig.Instance.SaveData("Display", 1);
         currentDisplay = 1;
         OnSwitchScreen?.Invoke(1);
+        mainListener.enabled = true;
     }
     void Config_F3(){
         Proj_Cameras[0].targetDisplay = 1;
@@ -143,6 +146,7 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
         SystemConfig.Instance.SaveData("Display", 2);
         currentDisplay = 2;
         OnSwitchScreen?.Invoke(2);
+        mainListener.enabled = false;
     }
     void Config_F4(){
         Proj_Cameras[0].targetDisplay = 1;
@@ -151,6 +155,7 @@ public class SystemManager : HimeLib.SingletonMono<SystemManager>
         SystemConfig.Instance.SaveData("Display", 3);
         currentDisplay = 3;
         OnSwitchScreen?.Invoke(3);
+        mainListener.enabled = false;
     }
 
     public void OSC_RecieveMsgCallback(string cmd){
